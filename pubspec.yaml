@@ -16,6 +16,8 @@ dependencies:
   shimmer: ^2.0.0
   animations: ^2.0.4
   animated_text_kit: ^4.2.2
+  simple_animations: ^5.0.0+2
+  flutter_hooks: ^0.18.5+1
 
 dev_dependencies:
   flutter_test:

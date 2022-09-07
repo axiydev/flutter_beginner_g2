@@ -3,6 +3,7 @@ import 'package:flutter_beginner/consts/router.dart';
 import 'package:flutter_beginner/pages/detail/detail_page.dart';
 import 'package:flutter_beginner/pages/first_page/first_page.dart';
 import 'package:flutter_beginner/pages/second/second_page.dart';
+import 'package:flutter_beginner/pages/third/third_page.dart';
 
 /*
 Created by Axmadjon Isaqov on 09:14:55 07.09.2022
@@ -27,7 +28,8 @@ class MyApp extends StatelessWidget {
       routes: {
         RouterApp.first: (context) => const FirstPage(),
         RouterApp.second: (context) => const SecondPage(),
-        RouterApp.detail: (context) => const DetailPage()
+        RouterApp.detail: (context) => const DetailPage(),
+        RouterApp.third: (context) => ThirdPage()
       },
       initialRoute: RouterApp.first,
     );

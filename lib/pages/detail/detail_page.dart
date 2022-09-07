@@ -1,5 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_beginner/consts/page_route_bd/page_route_bd.dart';
+import 'package:flutter_beginner/pages/third/third_page.dart';
 
 class DetailPage extends StatefulWidget {
   const DetailPage({Key? key}) : super(key: key);
@@ -45,6 +47,13 @@ class _DetailPageState extends State<DetailPage> {
             ),
           )
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.of(context)
+              .push(CustomPageRouteBuilder(child: ThirdPage()));
+        },
+        child: const Icon(Icons.arrow_forward),
       ),
     );
   }

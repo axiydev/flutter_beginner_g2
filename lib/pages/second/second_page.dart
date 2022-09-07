@@ -4,6 +4,7 @@ import 'package:animations/animations.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_beginner/pages/detail/detail_page.dart';
+import 'package:simple_animations/animation_mixin/animation_mixin.dart';
 
 class SecondPage extends StatefulWidget {
   const SecondPage({Key? key}) : super(key: key);
@@ -12,9 +13,9 @@ class SecondPage extends StatefulWidget {
   State<SecondPage> createState() => _SecondPageState();
 }
 
-class _SecondPageState extends State<SecondPage>
-    with SingleTickerProviderStateMixin {
-  AnimationController? _animationController;
+class _SecondPageState extends State<SecondPage> with AnimationMixin {
+  @override
+  late AnimationController controller;
   Animation<double>? _animation;
   FractionalOffset? _fractionalOffset = FractionalOffset.topLeft;
   double? _opacity = .0;
@@ -24,10 +25,9 @@ class _SecondPageState extends State<SecondPage>
   final double _currentPixel = .0;
   @override
   void initState() {
-    _animationController =
-        AnimationController(vsync: this, duration: const Duration(seconds: 1));
-    _animation = Tween<double>(begin: .0, end: 1).animate(
-        CurvedAnimation(parent: _animationController!, curve: Curves.linear));
+    controller = createController(fps: 60);
+    _animation = Tween<double>(begin: .0, end: 1)
+        .animate(CurvedAnimation(parent: controller, curve: Curves.linear));
 
     super.initState();
   }
@@ -217,10 +217,9 @@ class _SecondPageState extends State<SecondPage>
                         tooltip: 'animated widget',
                         child: const Icon(Icons.play_arrow),
                         onPressed: () {
-                          _animationController!.status ==
-                                  AnimationStatus.completed
-                              ? _animationController!.reverse()
-                              : _animationController!.forward();
+                          controller.status == AnimationStatus.completed
+                              ? controller.reverse()
+                              : controller.forward();
                         }),
                   ],
                 ),
