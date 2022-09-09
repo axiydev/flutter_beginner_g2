@@ -3,6 +3,7 @@ import 'package:flutter_beginner/consts/router.dart';
 import 'package:flutter_beginner/pages/detail/detail_page.dart';
 import 'package:flutter_beginner/pages/first_page/first_page.dart';
 import 'package:flutter_beginner/pages/last/last_page.dart';
+import 'package:flutter_beginner/pages/previus/previus_page.dart';
 import 'package:flutter_beginner/pages/second/second_page.dart';
 import 'package:flutter_beginner/pages/third/third_page.dart';
 
@@ -31,9 +32,10 @@ class MyApp extends StatelessWidget {
         RouterApp.second: (context) => const SecondPage(),
         RouterApp.detail: (context) => const DetailPage(),
         RouterApp.third: (context) => ThirdPage(),
-        RouterApp.last: (context) => const LastPage()
+        RouterApp.last: (context) => const LastPage(),
+        RouterApp.previus: (context) => const PreviusPage()
       },
-      initialRoute: RouterApp.last,
+      initialRoute: RouterApp.previus,
     );
   }
 }

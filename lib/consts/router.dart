@@ -4,4 +4,5 @@ class RouterApp {
   static const detail = '/detail';
   static const third = '/third';
   static const last = '/last';
+  static const previus = '/previus';
 }
