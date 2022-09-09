@@ -18,7 +18,7 @@ class _LastPageState extends State<LastPage>
   late Animation<double> _animationRotate;
   late Animation<double> _borderRadius;
   late Animation<Color?> _colorAnimation;
-
+//? initState
   @override
   void initState() {
     _animationController =
